@@ -6,16 +6,18 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 18:12:40 by mjacq             #+#    #+#             */
-/*   Updated: 2019/11/09 12:07:06 by mjacq            ###   ########.fr       */
+/*   Updated: 2020/12/03 12:17:46 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_min(int a, int b)
-{
-	return (a < b ? a : b);
-}
+/*
+** static int	ft_min(int a, int b)
+** {
+** 	return (a < b ? a : b);
+** }
+*/
 
 char		*ft_substr(char const *s, unsigned int start, size_t len)
 {

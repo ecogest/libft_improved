@@ -1,46 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_min_max_abs.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/02 13:56:51 by mjacq             #+#    #+#             */
-/*   Updated: 2020/12/03 12:18:22 by mjacq            ###   ########.fr       */
+/*   Created: 2019/12/07 13:16:56 by mjacq             #+#    #+#             */
+/*   Updated: 2019/12/07 13:20:40 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-/*
-** static int		ft_abs(int x)
-** {
-** 	return (x > 0 ? x : -x);
-** }
-*/
-
-char			*ft_itoa(int n)
+int		ft_min(int x, int y)
 {
-	int		i;
-	int		j;
-	char	*s;
+	return (x < y ? x : y);
+}
 
-	j = 1;
-	i = n;
-	while (i /= 10)
-		j++;
-	if (n < 0)
-		j++;
-	if (!(s = (char *)malloc(sizeof(*s) * (j + 1))))
-		return (NULL);
-	s[j] = '\0';
-	i = n;
-	while (j--)
-	{
-		s[j] = '0' + ft_abs(n % 10);
-		n /= 10;
-	}
-	if (i < 0)
-		s[0] = '-';
-	return (s);
+int		ft_max(int x, int y)
+{
+	return (x > y ? x : y);
+}
+
+int		ft_abs(int x)
+{
+	return (x > 0 ? x : -x);
 }

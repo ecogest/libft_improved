@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 18:45:42 by mjacq             #+#    #+#             */
-/*   Updated: 2020/07/04 18:17:31 by mjacq            ###   ########.fr       */
+/*   Updated: 2020/12/03 12:10:31 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,5 +148,19 @@ int					ft_wctomb(char *s, wchar_t wc);
 void				ft_putwchar_fd(wchar_t chr, int fd);
 void				ft_putwchar(wchar_t chr);
 int					ft_stris(const char *s, int (*ft_is)(int c));
+
+/*
+** Fonctions utiles dans ft_printf
+*/
+
+
+int					ft_abs(int x);
+char				*ft_itoa_base(unsigned long long n, int base);
+int					ft_max(int x, int y);
+int					ft_min(int x, int y);
+/* void				ft_putchar(char c); */
+/* void				ft_putstr(char *s); */
+/* char				*ft_strcpy(char *dst, const char *src); */
+/* char				*ft_strcat(char *dst, const char *src); */
 
 #endif

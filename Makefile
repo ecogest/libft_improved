@@ -6,7 +6,7 @@
 #    By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/23 18:35:15 by mjacq             #+#    #+#              #
-#    Updated: 2020/12/03 11:50:04 by mjacq            ###   ########.fr        #
+#    Updated: 2020/12/03 12:23:45 by mjacq            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -102,15 +102,30 @@ $(eval SRC += $(addprefix ft_str/,$(SRC_FT_STR)))
 # ft_to
 SRC_FT_TO := ft_atoi.c \
 	ft_itoa.c \
+	ft_itoa_base.c \
 	ft_tolower.c \
 	ft_toupper.c \
 	ft_wctomb.c
 $(eval SRC += $(addprefix ft_to/,$(SRC_FT_TO)))
 
+# ft_math
+SRC_FT_MATH := ft_min_max_abs.c
+$(eval SRC += $(addprefix ft_math/,$(SRC_FT_MATH)))
+
 # gnl
 SRC_GNL := get_next_line.c \
 	get_next_line_utils.c
 $(eval SRC += $(addprefix gnl/,$(SRC_GNL)))
+
+# ft_printf
+SRC_FT_PRINTF := core_functions.c \
+	flag_checking.c \
+	ft_lst.c \
+	ft_printf.c \
+	misc.c \
+	padding.c \
+	precision.c
+$(eval SRC += $(addprefix ft_printf/,$(SRC_FT_PRINTF)))
 
 # SRC = $(wildcard ft_*.c)
 OBJ = $(SRC:.c=.o)
