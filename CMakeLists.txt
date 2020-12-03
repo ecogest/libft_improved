@@ -8,7 +8,10 @@ set (CMAKE_EXPORT_COMPILE_COMMANDS ON)
 project (ft)
 
 # Sources
-file (GLOB SRC libft_original/ft_*.c)
+file (GLOB SRC
+	libft_original/ft_*.c
+	gnl/*.c
+	)
 
 # Create library
 add_library (${PROJECT_NAME} STATIC ${SRC})

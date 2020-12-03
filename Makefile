@@ -6,7 +6,7 @@
 #    By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/23 18:35:15 by mjacq             #+#    #+#              #
-#    Updated: 2020/12/03 10:42:37 by matthieu         ###   ########.fr        #
+#    Updated: 2020/12/03 11:02:54 by mjacq            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra $(INCLUDES)
 INCLUDES = -Iincludes
 
-SRC := ft_atoi.c \
+SRC_FT := ft_atoi.c \
 	ft_bzero.c \
 	ft_calloc.c \
 	ft_isalnum.c \
@@ -85,7 +85,12 @@ SRC := ft_atoi.c \
 	ft_toupper.c \
 	ft_wctomb.c
 
-$(eval SRC = $(addprefix libft_original/,$(SRC)))
+$(eval SRC = $(addprefix libft_original/,$(SRC_FT)))
+
+SRC_GNL := get_next_line.c \
+	get_next_line_utils.c
+
+$(eval SRC += $(addprefix gnl/,$(SRC_GNL)))
 
 # SRC = $(wildcard ft_*.c)
 OBJ = $(SRC:.c=.o)
