@@ -6,7 +6,7 @@
 #    By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/23 18:35:15 by mjacq             #+#    #+#              #
-#    Updated: 2020/12/03 10:38:36 by mjacq            ###   ########.fr        #
+#    Updated: 2020/12/03 10:42:37 by matthieu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -110,7 +110,7 @@ $(NAME): $(OBJ)
 # 	@echo "\033[38;5;2mArchive (with bonus) rebuilt (ar rc).\033[0m"
 
 clean:
-	@rm -f $(OBJ) $(BONUS_OBJ)
+	@rm -f $(OBJ)
 	@echo "\033[38;5;202mObjects removed.\033[0m"
 
 fclean: clean

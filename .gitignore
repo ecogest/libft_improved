@@ -3,6 +3,7 @@ main.c
 a.out
 build
 libft.a
+compile_commands.json
 
 # Prerequisites
 *.d
