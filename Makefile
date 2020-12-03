@@ -6,7 +6,7 @@
 #    By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/23 18:35:15 by mjacq             #+#    #+#              #
-#    Updated: 2020/12/03 11:34:18 by mjacq            ###   ########.fr        #
+#    Updated: 2020/12/03 11:50:04 by mjacq            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,10 +15,34 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra $(INCLUDES)
 INCLUDES = -Iincludes
 
-SRC_FT := ft_atoi.c \
-	ft_bzero.c \
+# SRC_FT :=
+# $(eval SRC = $(addprefix libft_original/,$(SRC_FT)))
+
+## SOURCES
+
+# ft_is 
+SRC_FT_IS := ft_isalnum.c \
+	ft_isalpha.c \
+	ft_isascii.c \
+	ft_isdigit.c \
+	ft_isprint.c
+$(eval SRC += $(addprefix ft_is/,$(SRC_FT_IS)))
+
+# ft_lst
+SRC_FT_LST := ft_lstadd_back.c \
+	ft_lstadd_front.c \
+	ft_lstclear.c \
+	ft_lstdelone.c \
+	ft_lstiter.c \
+	ft_lstlast.c \
+	ft_lstmap.c \
+	ft_lstnew.c \
+	ft_lstsize.c
+$(eval SRC += $(addprefix ft_lst/,$(SRC_FT_LST)))
+
+# ft_mem
+SRC_FT_MEM := ft_bzero.c \
 	ft_calloc.c \
-	ft_itoa.c \
 	ft_memalloc.c \
 	ft_memccpy.c \
 	ft_memchr.c \
@@ -26,8 +50,11 @@ SRC_FT := ft_atoi.c \
 	ft_memcpy.c \
 	ft_memdel.c \
 	ft_memmove.c \
-	ft_memset.c \
-	ft_putchar.c \
+	ft_memset.c
+$(eval SRC += $(addprefix ft_mem/,$(SRC_FT_MEM)))
+
+# ft_mem
+SRC_FT_PUT := ft_putchar.c \
 	ft_putchar_fd.c \
 	ft_putendl.c \
 	ft_putendl_fd.c \
@@ -36,8 +63,11 @@ SRC_FT := ft_atoi.c \
 	ft_putstr.c \
 	ft_putstr_fd.c \
 	ft_putwchar.c \
-	ft_putwchar_fd.c \
-	ft_split.c \
+	ft_putwchar_fd.c
+$(eval SRC += $(addprefix ft_put/,$(SRC_FT_PUT)))
+
+# ft_str
+SRC_FT_STR := ft_split.c \
 	ft_strcat.c \
 	ft_strchr.c \
 	ft_strclr.c \
@@ -66,33 +96,16 @@ SRC_FT := ft_atoi.c \
 	ft_strstr.c \
 	ft_strsub.c \
 	ft_strtrim.c \
-	ft_substr.c \
+	ft_substr.c
+$(eval SRC += $(addprefix ft_str/,$(SRC_FT_STR)))
+
+# ft_to
+SRC_FT_TO := ft_atoi.c \
+	ft_itoa.c \
 	ft_tolower.c \
 	ft_toupper.c \
 	ft_wctomb.c
-$(eval SRC = $(addprefix libft_original/,$(SRC_FT)))
-
-## SOURCES
-
-# ft_is 
-SRC_FT_IS := ft_isalnum.c \
-	ft_isalpha.c \
-	ft_isascii.c \
-	ft_isdigit.c \
-	ft_isprint.c
-$(eval SRC += $(addprefix ft_is/,$(SRC_FT_IS)))
-
-# ft_lst
-SRC_FT_LST := ft_lstadd_back.c \
-	ft_lstadd_front.c \
-	ft_lstclear.c \
-	ft_lstdelone.c \
-	ft_lstiter.c \
-	ft_lstlast.c \
-	ft_lstmap.c \
-	ft_lstnew.c \
-	ft_lstsize.c
-$(eval SRC += $(addprefix ft_lst/,$(SRC_FT_LST)))
+$(eval SRC += $(addprefix ft_to/,$(SRC_FT_TO)))
 
 # gnl
 SRC_GNL := get_next_line.c \
