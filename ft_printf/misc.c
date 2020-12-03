@@ -6,11 +6,11 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 22:02:50 by mjacq             #+#    #+#             */
-/*   Updated: 2019/12/07 17:36:52 by mjacq            ###   ########.fr       */
+/*   Updated: 2020/12/03 12:57:21 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf_priv.h"
 
 void	ft_tolower_str(char *str)
 {

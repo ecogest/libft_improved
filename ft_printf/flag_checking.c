@@ -6,11 +6,11 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 22:08:39 by mjacq             #+#    #+#             */
-/*   Updated: 2020/12/03 12:33:56 by matthieu         ###   ########.fr       */
+/*   Updated: 2020/12/03 12:57:21 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf_priv.h"
 
 int		ft_check_for_flags(t_printf *l, va_list ap)
 {

@@ -6,11 +6,11 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 23:02:35 by mjacq             #+#    #+#             */
-/*   Updated: 2019/12/07 18:03:39 by mjacq            ###   ########.fr       */
+/*   Updated: 2020/12/03 12:57:05 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf_priv.h"
 
 int		ft_apply_precision(t_printf *l)
 {

@@ -6,11 +6,11 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 17:46:47 by mjacq             #+#    #+#             */
-/*   Updated: 2019/12/07 19:44:13 by mjacq            ###   ########.fr       */
+/*   Updated: 2020/12/03 12:57:21 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf_priv.h"
 
 int		ft_copy_up_to_percent(t_printf *l)
 {

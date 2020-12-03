@@ -6,11 +6,11 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 15:59:43 by mjacq             #+#    #+#             */
-/*   Updated: 2019/12/09 11:44:53 by mjacq            ###   ########.fr       */
+/*   Updated: 2020/12/03 12:57:21 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf_priv.h"
 
 int			ft_lst_add_link(t_printf **link, char *fmt)
 {
