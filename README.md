@@ -2,7 +2,7 @@
 
 ## Description
 
-My libft + gnl + ft_printf from my previous projects.
+My libft + gnl + ft_printf library. Gathered from my previous projects.
 
 ## Build
 
@@ -12,7 +12,7 @@ Creates `libft.a`.
 
 `make`
 
-### Quick build with simple main
+### Quick build with a simple main
 
 `./run.sh`
 
@@ -25,7 +25,7 @@ Creates `libft.a`.
 
 ## Headers
 
-In folder include:
+In folder `includes/`:
 - libft.h
 - libftprintf.h
 - get_next_line.h
