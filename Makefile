@@ -6,7 +6,7 @@
 #    By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/23 18:35:15 by mjacq             #+#    #+#              #
-#    Updated: 2020/12/03 11:21:04 by mjacq            ###   ########.fr        #
+#    Updated: 2020/12/03 11:34:18 by mjacq            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,15 +19,6 @@ SRC_FT := ft_atoi.c \
 	ft_bzero.c \
 	ft_calloc.c \
 	ft_itoa.c \
-	ft_lstadd_back.c \
-	ft_lstadd_front.c \
-	ft_lstclear.c \
-	ft_lstdelone.c \
-	ft_lstiter.c \
-	ft_lstlast.c \
-	ft_lstmap.c \
-	ft_lstnew.c \
-	ft_lstsize.c \
 	ft_memalloc.c \
 	ft_memccpy.c \
 	ft_memchr.c \
@@ -79,20 +70,33 @@ SRC_FT := ft_atoi.c \
 	ft_tolower.c \
 	ft_toupper.c \
 	ft_wctomb.c
-
 $(eval SRC = $(addprefix libft_original/,$(SRC_FT)))
 
+## SOURCES
+
+# ft_is 
 SRC_FT_IS := ft_isalnum.c \
 	ft_isalpha.c \
 	ft_isascii.c \
 	ft_isdigit.c \
-	ft_isprint.c \
-
+	ft_isprint.c
 $(eval SRC += $(addprefix ft_is/,$(SRC_FT_IS)))
 
+# ft_lst
+SRC_FT_LST := ft_lstadd_back.c \
+	ft_lstadd_front.c \
+	ft_lstclear.c \
+	ft_lstdelone.c \
+	ft_lstiter.c \
+	ft_lstlast.c \
+	ft_lstmap.c \
+	ft_lstnew.c \
+	ft_lstsize.c
+$(eval SRC += $(addprefix ft_lst/,$(SRC_FT_LST)))
+
+# gnl
 SRC_GNL := get_next_line.c \
 	get_next_line_utils.c
-
 $(eval SRC += $(addprefix gnl/,$(SRC_GNL)))
 
 # SRC = $(wildcard ft_*.c)
