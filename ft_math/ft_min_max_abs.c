@@ -6,21 +6,21 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/07 13:16:56 by mjacq             #+#    #+#             */
-/*   Updated: 2019/12/07 13:20:40 by mjacq            ###   ########.fr       */
+/*   Updated: 2020/12/03 12:34:30 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_min(int x, int y)
+int		ft_int_min(int x, int y)
 {
 	return (x < y ? x : y);
 }
 
-int		ft_max(int x, int y)
+int		ft_int_max(int x, int y)
 {
 	return (x > y ? x : y);
 }
 
-int		ft_abs(int x)
+int		ft_int_abs(int x)
 {
 	return (x > 0 ? x : -x);
 }
