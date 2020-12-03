@@ -6,11 +6,11 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 17:34:12 by mjacq             #+#    #+#             */
-/*   Updated: 2019/11/19 21:02:19 by mjacq            ###   ########.fr       */
+/*   Updated: 2020/12/03 13:07:27 by matthieu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_priv.h"
 
 int				ft_char_to_copy(char buf[])
 {
