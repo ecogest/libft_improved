@@ -6,7 +6,7 @@
 #    By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/23 18:35:15 by mjacq             #+#    #+#              #
-#    Updated: 2020/12/03 11:02:54 by mjacq            ###   ########.fr        #
+#    Updated: 2020/12/03 11:21:04 by mjacq            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,6 @@ INCLUDES = -Iincludes
 SRC_FT := ft_atoi.c \
 	ft_bzero.c \
 	ft_calloc.c \
-	ft_isalnum.c \
-	ft_isalpha.c \
-	ft_isascii.c \
-	ft_isdigit.c \
-	ft_isprint.c \
 	ft_itoa.c \
 	ft_lstadd_back.c \
 	ft_lstadd_front.c \
@@ -86,6 +81,14 @@ SRC_FT := ft_atoi.c \
 	ft_wctomb.c
 
 $(eval SRC = $(addprefix libft_original/,$(SRC_FT)))
+
+SRC_FT_IS := ft_isalnum.c \
+	ft_isalpha.c \
+	ft_isascii.c \
+	ft_isdigit.c \
+	ft_isprint.c \
+
+$(eval SRC += $(addprefix ft_is/,$(SRC_FT_IS)))
 
 SRC_GNL := get_next_line.c \
 	get_next_line_utils.c

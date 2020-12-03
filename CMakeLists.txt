@@ -10,6 +10,7 @@ project (ft)
 # Sources
 file (GLOB SRC
 	libft_original/ft_*.c
+	ft_*/*.c
 	gnl/*.c
 	)
 
