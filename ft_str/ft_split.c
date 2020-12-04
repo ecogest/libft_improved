@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/02 15:46:06 by mjacq             #+#    #+#             */
-/*   Updated: 2019/11/09 15:21:17 by mjacq            ###   ########.fr       */
+/*   Updated: 2020/12/04 20:07:04 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	ft_len_piece(char const *s, char c)
 	int i;
 
 	i = 0;
-	while (*s++ != c)
+	while (s[i] && s[i] != c)
 		i++;
 	return (i);
 }
