@@ -6,17 +6,14 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/02 13:56:51 by mjacq             #+#    #+#             */
-/*   Updated: 2020/12/03 12:33:56 by matthieu         ###   ########.fr       */
+/*   Updated: 2021/04/07 19:09:42 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** static int		ft_abs(int x)
-** {
-** 	return (x > 0 ? x : -x);
-** }
+** Convert int to string.
 */
 
 char			*ft_itoa(int n)

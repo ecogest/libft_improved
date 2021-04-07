@@ -6,12 +6,11 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 15:43:48 by mjacq             #+#    #+#             */
-/*   Updated: 2019/11/08 17:03:53 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/07 19:19:28 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define INT_MIN -2147483648
-#define INT_MAX 2147483647
+#include <limits.h>
 
 static int	ft_isspace(char c)
 {
@@ -23,6 +22,10 @@ static int	ft_isspace(char c)
 	return (*space_list ? 1 : 0);
 }
 
+/*
+** Convert string to int. Positive overflows return (-1), negative overflows (0)
+*/
+
 int			ft_atoi(const char *str)
 {
 	long	number;
@@ -30,12 +33,21 @@ int			ft_atoi(const char *str)
 
 	while (ft_isspace(*str))
 		str++;
-	sign = (*str == '-') ? -1 : 1;
-	str += (*str == '+' || *str == '-') ? 1 : 0;
+	sign = 1;
+	if (*str == '-')
+		sign = -1;
+	if (*str == '+' || *str == '-')
+		str++;
 	number = 0;
 	while (*str >= '0' && *str <= '9')
 		number = 10 * number + *str++ - '0';
 	if (sign * number > INT_MAX || sign * number < INT_MIN)
-		return (sign > 0 ? -1 : 0);
-	return (sign * (int)number);
+	{
+		if (sign > 0)
+			return (-1);
+		else
+			return (0);
+	}
+	else
+		return (sign * (int)number);
 }

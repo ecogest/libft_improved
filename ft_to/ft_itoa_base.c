@@ -6,13 +6,15 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/28 18:57:25 by mjacq             #+#    #+#             */
-/*   Updated: 2019/12/07 12:57:22 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/07 19:08:58 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
+** Convert unsigned long long to string, according to a base between 2 and 16.
+**
 ** On utilise un double car les adresses (pointeurs) à convertir en hexa
 ** dépassent la taille d'un int ou d'un unsigned int.
 */
