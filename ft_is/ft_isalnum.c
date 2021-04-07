@@ -6,11 +6,15 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/02 17:49:31 by mjacq             #+#    #+#             */
-/*   Updated: 2019/11/11 17:19:00 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/07 10:06:06 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** True if isalpha or isdigit.
+*/
 
 int	ft_isalnum(int c)
 {

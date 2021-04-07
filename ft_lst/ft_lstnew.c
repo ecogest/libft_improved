@@ -6,19 +6,23 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 19:11:16 by mjacq             #+#    #+#             */
-/*   Updated: 2019/11/07 20:15:11 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/07 10:44:46 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+** Creates a list node.
+*/
+
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*t;
+	t_list	*node;
 
-	if (!(t = (t_list *)malloc(sizeof(*t))))
+	if (!(node = (t_list *)malloc(sizeof(*node))))
 		return (NULL);
-	t->content = content;
-	t->next = NULL;
-	return (t);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }

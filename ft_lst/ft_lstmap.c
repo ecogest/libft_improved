@@ -6,28 +6,34 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 23:28:43 by mjacq             #+#    #+#             */
-/*   Updated: 2019/11/08 00:04:19 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/07 10:42:01 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+** Create a new list where each content is returned transformed by a function.
+**
+** Clears it all if one malloc fails during node creation.
+*/
+
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new;
-	t_list	*t;
+	t_list	*new_list;
+	t_list	*node;
 
-	new = NULL;
+	new_list = NULL;
 	while (lst)
 	{
-		if (!(t = ft_lstnew(lst->content)))
+		if (!(node = ft_lstnew(NULL)))
 		{
-			ft_lstclear(&new, del);
+			ft_lstclear(&new_list, del);
 			return (NULL);
 		}
-		t->content = f(t->content);
-		ft_lstadd_back(&new, t);
+		node->content = f(lst->content);
+		ft_lstadd_back(&new_list, node);
 		lst = lst->next;
 	}
-	return (new);
+	return (new_list);
 }

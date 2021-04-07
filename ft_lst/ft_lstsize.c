@@ -6,11 +6,15 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 21:10:32 by mjacq             #+#    #+#             */
-/*   Updated: 2019/11/07 21:13:17 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/07 10:46:24 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Returns the size of a list.
+*/
 
 int	ft_lstsize(t_list *lst)
 {

@@ -6,9 +6,13 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/02 17:32:16 by mjacq             #+#    #+#             */
-/*   Updated: 2019/11/11 17:19:19 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/07 10:06:47 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** True if ascii letter (uppercase or lowercase)
+*/
 
 int	ft_isalpha(int c)
 {
