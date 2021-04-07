@@ -6,11 +6,15 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 16:44:46 by mjacq             #+#    #+#             */
-/*   Updated: 2020/07/01 10:35:32 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/07 19:43:58 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+
+/*
+** Search haystack for a needle. Return matching haystack pointer.
+*/
 
 char	*ft_strstr(const char *haystack, const char *needle)
 {

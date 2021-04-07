@@ -6,17 +6,14 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 18:12:40 by mjacq             #+#    #+#             */
-/*   Updated: 2020/12/03 12:46:21 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/07 19:36:41 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** static int	ft_min(int a, int b)
-** {
-** 	return (a < b ? a : b);
-** }
+** Returns a substring.
 */
 
 char		*ft_substr(char const *s, unsigned int start, size_t len)

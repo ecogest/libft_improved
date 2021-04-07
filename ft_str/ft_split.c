@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/02 15:46:06 by mjacq             #+#    #+#             */
-/*   Updated: 2020/12/04 20:07:04 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/07 20:59:48 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,15 @@ static char	**ft_cleartab(char **t)
 	return (NULL);
 }
 
+/*
+** Split string at each char delimiter. Return NULL terminated array of strings.
+*/
+
 char		**ft_split(char const *s, char c)
 {
 	char	**t;
 	int		i;
-	int		j;
+	int		len;
 
 	if (s == 0 || !(t = (char **)malloc(sizeof(*t) * (ft_n_pieces(s, c) + 1))))
 		return (NULL);
@@ -66,14 +70,11 @@ char		**ft_split(char const *s, char c)
 			s++;
 		if (*s)
 		{
-			t[i] = (char *)malloc(sizeof(**t) * (ft_len_piece(s, c) + 1));
-			if (!(t[i]))
+			len = ft_len_piece(s, c);
+			t[i] = (char *)malloc(sizeof(**t) * (len + 1));
+			if (!(t[i++] = ft_strsub(s, 0, len)))
 				return (ft_cleartab(t));
-			j = 0;
-			while (*s && *s != c)
-				t[i][j++] = *s++;
-			t[i][j] = '\0';
-			i++;
+			s += len;
 		}
 	}
 	t[i] = NULL;
