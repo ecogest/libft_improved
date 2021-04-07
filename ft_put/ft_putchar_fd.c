@@ -6,11 +6,15 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 15:52:48 by mjacq             #+#    #+#             */
-/*   Updated: 2020/07/02 11:30:11 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/07 12:04:43 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+/*
+** Put one char to specified file descriptor.
+*/
 
 void	ft_putchar_fd(char c, int fd)
 {

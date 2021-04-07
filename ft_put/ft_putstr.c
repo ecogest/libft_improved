@@ -6,14 +6,20 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 20:55:50 by mjacq             #+#    #+#             */
-/*   Updated: 2019/11/18 18:39:16 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/07 12:13:04 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "libft.h"
+
+/*
+** Put a string to stdout.
+*/
 
 void	ft_putstr(char *s)
 {
-	while (s && *s)
-		write(1, s++, 1);
+	if (!s)
+		return ;
+	write(1, s, ft_strlen(s));
 }

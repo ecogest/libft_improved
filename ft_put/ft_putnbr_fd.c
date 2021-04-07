@@ -6,17 +6,14 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 15:57:19 by mjacq             #+#    #+#             */
-/*   Updated: 2020/12/03 12:33:56 by matthieu         ###   ########.fr       */
+/*   Updated: 2021/04/07 12:09:25 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** static int	ft_abs(int x)
-** {
-** 	return (x > 0 ? x : -x);
-** }
+** Put an integer to specified fd.
 */
 
 void		ft_putnbr_fd(int n, int fd)

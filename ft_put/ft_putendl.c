@@ -6,11 +6,15 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 18:11:10 by mjacq             #+#    #+#             */
-/*   Updated: 2020/06/29 18:12:51 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/07 12:06:36 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Put string and '\n' to stdout.
+*/
 
 void	ft_putendl(char const *s)
 {

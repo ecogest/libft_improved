@@ -6,11 +6,15 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 18:13:50 by mjacq             #+#    #+#             */
-/*   Updated: 2020/06/29 18:14:40 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/07 12:08:34 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Put an integer to stdout.
+*/
 
 void	ft_putnbr(int n)
 {

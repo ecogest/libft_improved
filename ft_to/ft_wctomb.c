@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/02 15:46:52 by mjacq             #+#    #+#             */
-/*   Updated: 2020/07/03 10:27:00 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/07 12:19:42 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ static int	ft_wctomb_count_bytes(wchar_t wc)
 }
 
 /*
-** Wide char to multibyte. s memory must be already allocated
+** Wide char to multibyte. s memory must be already allocated.
+**
 ** Ex char s[4]; ft_wctomb(s, L'🌺');
 */
 

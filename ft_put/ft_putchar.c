@@ -6,11 +6,15 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 20:54:33 by mjacq             #+#    #+#             */
-/*   Updated: 2019/11/11 20:55:32 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/07 12:04:18 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+/*
+** Put one char to stdout.
+*/
 
 void	ft_putchar(char c)
 {
