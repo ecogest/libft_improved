@@ -6,11 +6,15 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 16:59:36 by mjacq             #+#    #+#             */
-/*   Updated: 2020/07/04 18:23:05 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/07 10:52:26 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Reset n bytes at 0.
+*/
 
 void	ft_bzero(void *s, size_t n)
 {

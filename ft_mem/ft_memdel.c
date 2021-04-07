@@ -6,11 +6,15 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 17:05:41 by mjacq             #+#    #+#             */
-/*   Updated: 2020/07/01 10:01:44 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/07 11:55:33 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+
+/*
+** Free *ap and reset *ap to NULL.
+*/
 
 void	ft_memdel(void **ap)
 {

@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:32:05 by mjacq             #+#    #+#             */
-/*   Updated: 2020/07/04 19:13:10 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/07 11:54:12 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,11 @@ static void	ft_memcpy_opti(void **d, const void **src, size_t *n)
 }
 
 /*
-** The memcpy() function copies n bytes from memory area src to memory area
+** Copy n bytes. Source and dest should NOT overlap.
+**
+** "The memcpy() function copies n bytes from memory area src to memory area
 ** dst.  If dst and src overlap, behavior is undefined.  Applications in which
-** dst and src might overlap should use memmove(3) instead.
+** dst and src might overlap should use memmove(3) instead."
 */
 
 void		*ft_memcpy(void *dst, const void *src, size_t n)

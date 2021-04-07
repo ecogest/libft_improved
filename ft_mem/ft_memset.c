@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 16:14:25 by mjacq             #+#    #+#             */
-/*   Updated: 2020/07/04 18:19:58 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/07 12:00:30 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ static void	ft_optimemset(void **b, t_op cccc, size_t *len)
 }
 
 /*
+** Set n bytes to c (casted to unsigned char).
+**
 ** The memset() function writes len bytes of value c (converted to an unsigned
 ** char) to the string b.
 */
