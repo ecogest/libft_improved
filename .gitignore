@@ -2,8 +2,11 @@
 main.c
 a.out
 build
+.build
 libft.a
 compile_commands.json
+UnitTests
+tags
 
 # Prerequisites
 *.d
