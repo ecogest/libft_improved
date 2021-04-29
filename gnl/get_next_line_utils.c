@@ -6,13 +6,13 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 17:34:12 by mjacq             #+#    #+#             */
-/*   Updated: 2020/12/03 13:07:27 by matthieu         ###   ########.fr       */
+/*   Updated: 2021/04/29 20:38:47 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_priv.h"
 
-int				ft_char_to_copy(char buf[])
+int	ft_char_to_copy(char buf[])
 {
 	int	i;
 
@@ -23,13 +23,14 @@ int				ft_char_to_copy(char buf[])
 	return (i);
 }
 
-int				ft_alloc_line(char **line, int ctc)
+int	ft_alloc_line(char **line, int ctc)
 {
 	int		i;
 	char	*temp;
 
 	temp = *line;
-	if (!(*line = (char *)malloc(sizeof(char) * (ctc + ft_strlen2(*line) + 1))))
+	*line = (char *)malloc(sizeof(char) * (ctc + ft_strlen2(*line) + 1));
+	if (!*line)
 		return (ERROR);
 	i = -1;
 	while (temp[++i])
@@ -39,7 +40,7 @@ int				ft_alloc_line(char **line, int ctc)
 	return (0);
 }
 
-void			ft_concat_line_buffer(char *line, char buf[], int ctc)
+void	ft_concat_line_buffer(char *line, char buf[], int ctc)
 {
 	while (*line)
 		line++;
@@ -48,12 +49,15 @@ void			ft_concat_line_buffer(char *line, char buf[], int ctc)
 	*line = '\0';
 }
 
-int				ft_buffer_shift(char buf[], unsigned int shift)
+int	ft_buffer_shift(char buf[], unsigned int shift)
 {
 	int	i;
-	int ret;
+	int	ret;
 
-	ret = (shift < BUFFER_SIZE && buf[shift] == '\n' ? COMPLETE : ONGOING);
+	if (shift < BUFFER_SIZE && buf[shift] == '\n')
+		ret = COMPLETE;
+	else
+		ret = ONGOING;
 	shift += (ret == COMPLETE);
 	i = 0;
 	while (shift + i < BUFFER_SIZE && buf[shift + i])

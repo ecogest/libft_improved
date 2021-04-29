@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 15:56:00 by mjacq             #+#    #+#             */
-/*   Updated: 2020/12/03 13:07:07 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/29 20:39:07 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	ft_copy_buffer_line(char buf[], char **line, int ret_read)
 	return (ft_buffer_shift(buf, ctc));
 }
 
-int			get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	int				ret_read;
 	int				ret_copy;
