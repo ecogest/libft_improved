@@ -6,11 +6,26 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/28 18:57:25 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/07 19:08:58 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/29 20:34:21 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static size_t	number_length(unsigned long long n, int base)
+{
+	size_t	size;
+
+	if (n == 0)
+		return (1);
+	size = 0;
+	while (n)
+	{
+		size++;
+		n /= base;
+	}
+	return (size);
+}
 
 /*
 ** Convert unsigned long long to string, according to a base between 2 and 16.
@@ -24,16 +39,13 @@ char	*ft_itoa_base(unsigned long long n, int base)
 	char				*base_char;
 	char				*ret;
 	int					len_nbr;
-	unsigned long long	n_cpy;
 
 	if (base > 16 || base < 2)
 		return (NULL);
 	base_char = "0123456789ABCDEF";
-	n_cpy = n;
-	len_nbr = 1;
-	while (n_cpy /= base)
-		len_nbr++;
-	if (!(ret = (char *)malloc(sizeof(char) * (len_nbr + 1))))
+	len_nbr = number_length(n, base);
+	ret = (char *)malloc(sizeof(char) * (len_nbr + 1));
+	if (!ret)
 		return (NULL);
 	ret[len_nbr] = '\0';
 	while (len_nbr--)

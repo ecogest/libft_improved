@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/02 15:46:52 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/07 12:19:42 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/29 20:35:33 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,15 @@ static int	ft_wctomb_count_bytes(wchar_t wc)
 ** Ex char s[4]; ft_wctomb(s, L'🌺');
 */
 
-int			ft_wctomb(char *s, wchar_t wc)
+int	ft_wctomb(char *s, wchar_t wc)
 {
 	int	nbytes;
 	int	ret;
 
 	if (!s)
 		return (0);
-	if ((nbytes = ft_wctomb_count_bytes(wc)) == -1)
+	nbytes = ft_wctomb_count_bytes(wc);
+	if (nbytes == -1)
 		return (-1);
 	ret = nbytes;
 	ft_bzero(s, nbytes);
