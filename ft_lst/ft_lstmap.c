@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 23:28:43 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/07 10:42:01 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/29 20:22:24 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	new_list = NULL;
 	while (lst)
 	{
-		if (!(node = ft_lstnew(NULL)))
+		node = ft_lstnew(NULL);
+		if (!node)
 		{
 			ft_lstclear(&new_list, del);
 			return (NULL);

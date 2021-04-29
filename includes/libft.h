@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 18:45:42 by mjacq             #+#    #+#             */
-/*   Updated: 2020/12/03 12:47:48 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/29 20:24:35 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ typedef unsigned long	t_ulong;
 ** used in ft_memset
 */
 
-typedef int64_t	t_op;
+typedef int64_t			t_op;
 
 /*
 ** Part I
@@ -96,7 +96,7 @@ void				ft_putnbr_fd(int n, int fd);
 ** Bonus
 */
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;

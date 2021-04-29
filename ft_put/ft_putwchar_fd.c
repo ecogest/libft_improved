@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/02 11:29:46 by mjacq             #+#    #+#             */
-/*   Updated: 2020/07/02 15:47:59 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/29 20:25:46 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void	ft_putwchar_fd(wchar_t wc, int fd)
 	char	s[4];
 	int		nb_bytes;
 
-	if ((nb_bytes = ft_wctomb(s, wc)) == -1)
+	nb_bytes = ft_wctomb(s, wc);
+	if (nb_bytes == -1)
 		return ;
 	write(fd, s, nb_bytes);
 }
