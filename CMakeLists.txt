@@ -20,3 +20,6 @@ add_library (${PROJECT_NAME} STATIC ${SRC})
 # Includes
 target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Werror -Wextra)
 target_include_directories (${PROJECT_NAME} PUBLIC ./includes)
+
+enable_testing ()
+add_subdirectory (tests)
