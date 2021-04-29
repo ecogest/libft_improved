@@ -6,35 +6,48 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/02 13:56:51 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/07 19:09:42 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/29 19:50:04 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static size_t	number_length(int n)
+{
+	size_t	size;
+
+	if (n == 0)
+		return (1);
+	size = 0;
+	if (n < 0)
+		size++;
+	while (n)
+	{
+		size++;
+		n /= 10;
+	}
+	return (size);
+}
+
 /*
 ** Convert int to string.
 */
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	int		i;
-	int		j;
 	char	*s;
+	size_t	size;
+	int		i;
 
-	j = 1;
-	i = n;
-	while (i /= 10)
-		j++;
-	if (n < 0)
-		j++;
-	if (!(s = (char *)malloc(sizeof(*s) * (j + 1))))
+	size = number_length(n);
+	s = (char *)malloc(sizeof(*s) * (size + 1));
+	if (!s)
 		return (NULL);
-	s[j] = '\0';
+	s[size] = '\0';
 	i = n;
-	while (j--)
+	while (size--)
 	{
-		s[j] = '0' + ft_int_abs(n % 10);
+		s[size] = '0' + ft_int_abs(n % 10);
 		n /= 10;
 	}
 	if (i < 0)
