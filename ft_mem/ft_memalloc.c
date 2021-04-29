@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 16:55:15 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/07 11:23:51 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/29 19:52:14 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	*ft_memalloc(size_t size)
 {
 	void	*mem;
 
-	if (!(mem = ft_calloc(size, 1)))
+	mem = ft_calloc(size, 1);
+	if (!mem)
 		return (NULL);
 	else
 		return (mem);

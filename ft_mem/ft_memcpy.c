@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:32:05 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/07 11:54:12 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/29 19:51:29 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	ft_memcpy_opti(void **d, const void **src, size_t *n)
 ** dst and src might overlap should use memmove(3) instead."
 */
 
-void		*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	void	*d;
 

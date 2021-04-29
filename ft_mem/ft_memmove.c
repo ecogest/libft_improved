@@ -6,13 +6,13 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 10:57:55 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/07 11:59:03 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/29 19:53:13 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void		*ft_memcpy_bwd(void *dst, const void *src, size_t len)
+static void	*ft_memcpy_bwd(void *dst, const void *src, size_t len)
 {
 	char		*d;
 	const char	*s;
@@ -28,7 +28,7 @@ static void		*ft_memcpy_bwd(void *dst, const void *src, size_t len)
 ** Copy n bytes. Source and dest CAN overlap.
 */
 
-void			*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	if (dst < src)
 		return (ft_memcpy(dst, src, len));

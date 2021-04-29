@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 16:14:25 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/07 12:00:30 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/29 19:52:34 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	ft_optimemset(void **b, t_op cccc, size_t *len)
 ** char) to the string b.
 */
 
-void		*ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	t_op	cccc;
 	void	*a;
