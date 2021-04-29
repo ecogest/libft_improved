@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 19:11:16 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/07 10:44:46 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/29 20:12:17 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*node;
 
-	if (!(node = (t_list *)malloc(sizeof(*node))))
+	node = (t_list *)malloc(sizeof(*node));
+	if (!node)
 		return (NULL);
 	node->content = content;
 	node->next = NULL;

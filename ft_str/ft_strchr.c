@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 15:06:11 by mjacq             #+#    #+#             */
-/*   Updated: 2019/11/08 14:41:32 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/29 19:55:43 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,8 @@ char	*ft_strchr(const char *s, int c)
 {
 	while (*s && *s != (char)c)
 		s++;
-	return (*s == c ? (char *)s : NULL);
+	if (*s == c)
+		return ((char *)s);
+	else
+		return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 15:31:13 by mjacq             #+#    #+#             */
-/*   Updated: 2019/11/06 16:02:21 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/29 20:08:23 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		s2++;
 		n--;
 	}
-	return (n ? (unsigned char)*s1 - (unsigned char)*s2 : 0);
+	if (n)
+		return ((unsigned char)*s1 - (unsigned char)*s2);
+	else
+		return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 18:12:40 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/07 19:36:41 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/29 20:07:08 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Returns a substring.
 */
 
-char		*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	int		i;
 	char	*substr;
