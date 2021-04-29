@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/02 15:46:06 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/07 20:59:48 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/29 20:03:23 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_len_piece(char const *s, char c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i] && s[i] != c)
@@ -55,13 +55,16 @@ static char	**ft_cleartab(char **t)
 ** Split string at each char delimiter. Return NULL terminated array of strings.
 */
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**t;
 	int		i;
 	int		len;
 
-	if (s == 0 || !(t = (char **)malloc(sizeof(*t) * (ft_n_pieces(s, c) + 1))))
+	if (!s)
+		return (NULL);
+	t = (char **)malloc(sizeof(*t) * (ft_n_pieces(s, c) + 1));
+	if (!t)
 		return (NULL);
 	i = 0;
 	while (*s)
@@ -71,8 +74,8 @@ char		**ft_split(char const *s, char c)
 		if (*s)
 		{
 			len = ft_len_piece(s, c);
-			t[i] = (char *)malloc(sizeof(**t) * (len + 1));
-			if (!(t[i++] = ft_strsub(s, 0, len)))
+			t[i] = ft_strsub(s, 0, len);
+			if (!t[i++])
 				return (ft_cleartab(t));
 			s += len;
 		}
