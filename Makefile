@@ -6,7 +6,7 @@
 #    By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/23 18:35:15 by mjacq             #+#    #+#              #
-#    Updated: 2020/12/03 12:23:45 by mjacq            ###   ########.fr        #
+#    Updated: 2021/04/29 20:28:42 by mjacq            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ INCLUDES = -Iincludes
 
 ## SOURCES
 
-# ft_is 
+# ft_is
 SRC_FT_IS := ft_isalnum.c \
 	ft_isalpha.c \
 	ft_isascii.c \
@@ -117,15 +117,15 @@ SRC_GNL := get_next_line.c \
 	get_next_line_utils.c
 $(eval SRC += $(addprefix gnl/,$(SRC_GNL)))
 
-# ft_printf
-SRC_FT_PRINTF := core_functions.c \
-	flag_checking.c \
-	ft_lst.c \
-	ft_printf.c \
-	misc.c \
-	padding.c \
-	precision.c
-$(eval SRC += $(addprefix ft_printf/,$(SRC_FT_PRINTF)))
+# # ft_printf
+# SRC_FT_PRINTF := core_functions.c \
+# 	flag_checking.c \
+# 	ft_lst.c \
+# 	ft_printf.c \
+# 	misc.c \
+# 	padding.c \
+# 	precision.c
+# $(eval SRC += $(addprefix ft_printf/,$(SRC_FT_PRINTF)))
 
 # SRC = $(wildcard ft_*.c)
 OBJ = $(SRC:.c=.o)
