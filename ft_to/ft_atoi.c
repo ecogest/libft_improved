@@ -6,32 +6,35 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 15:43:48 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/07 19:19:28 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/04/29 19:35:45 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits.h>
 
-static int	ft_isspace(char c)
+static int	atoi_isspace(char c)
 {
 	char	*space_list;
 
 	space_list = " \f\n\r\t\v";
 	while (*space_list && c != *space_list)
 		space_list++;
-	return (*space_list ? 1 : 0);
+	if (*space_list)
+		return (1);
+	else
+		return (0);
 }
 
 /*
 ** Convert string to int. Positive overflows return (-1), negative overflows (0)
 */
 
-int			ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	long	number;
 	int		sign;
 
-	while (ft_isspace(*str))
+	while (atoi_isspace(*str))
 		str++;
 	sign = 1;
 	if (*str == '-')
