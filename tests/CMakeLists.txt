@@ -6,8 +6,12 @@ set (TESTER_NAME UnitTests)
 
 set (TEST_SRCS
 # ========================== ADD TEST SOURCES BELOW ========================== #
-  test_ft_strcmp.cc
-  test_ft_isalnum.cc
+  ft_is/test_ft_isprint.cc
+  ft_is/test_ft_isdigit.cc
+  ft_is/test_ft_isascii.cc
+  ft_is/test_ft_isalpha.cc
+  ft_is/test_ft_strcmp.cc
+  ft_is/test_ft_isalnum.cc
   )
 
 add_executable (${TESTER_NAME} ${TEST_SRCS})

@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 09:14:47 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/30 15:21:31 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/06 19:56:38 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ struct IsAlnumTest: public ::testing::TestWithParam<std::tuple<char, bool>> {
 
 TEST_P(IsAlnumTest, all) {
 	EXPECT_EQ(ft_isalnum(tested_char), expected_result);
+	EXPECT_EQ(ft_isalnum(tested_char), isalnum(tested_char));
 }
 
 INSTANTIATE_TEST_SUITE_P(AlnumSuite, IsAlnumTest, ::testing::Values(
@@ -89,12 +90,13 @@ INSTANTIATE_TEST_SUITE_P(AlnumSuite, IsAlnumTest, ::testing::Values(
 */
 
 struct IntIsAlnumTest: public ::testing::TestWithParam<std::tuple<int, bool>> {
-	char	tested_char = std::get<0>(GetParam());
+	int		tested_char = std::get<0>(GetParam());
 	bool	expected_result = std::get<1>(GetParam());
 };
 
 TEST_P(IntIsAlnumTest, all) {
 	EXPECT_EQ(ft_isalnum(tested_char), expected_result);
+	EXPECT_EQ(ft_isalnum(tested_char), isalnum(tested_char));
 }
 
 INSTANTIATE_TEST_SUITE_P(AlnumSuite, IntIsAlnumTest, ::testing::Values(
