@@ -6,9 +6,11 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 10:42:48 by mjacq             #+#    #+#             */
-/*   Updated: 2020/07/03 14:34:55 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/06 20:29:11 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_stris(const char *s, int (*ft_is)(int c))
 {

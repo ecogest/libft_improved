@@ -6,11 +6,12 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 15:52:48 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/07 12:04:43 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/06 20:27:57 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "libft.h"
 
 /*
 ** Put one char to specified file descriptor.

@@ -6,9 +6,11 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 16:07:14 by mjacq             #+#    #+#             */
-/*   Updated: 2020/06/29 16:24:50 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/06 20:29:00 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strcpy(char *dst, const char *src)
 {

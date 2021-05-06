@@ -6,9 +6,11 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 17:22:59 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/29 19:56:18 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/06 20:29:17 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
 ** Applies the function f to each character of the string passed

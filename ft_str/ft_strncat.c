@@ -6,11 +6,12 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 16:39:52 by mjacq             #+#    #+#             */
-/*   Updated: 2020/07/01 11:35:08 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/06 20:29:36 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include "libft.h"
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {

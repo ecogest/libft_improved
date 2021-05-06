@@ -6,9 +6,11 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 17:18:08 by mjacq             #+#    #+#             */
-/*   Updated: 2020/07/01 10:50:25 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/06 20:28:52 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
 ** Sets every character of the string to the value ’\0’.

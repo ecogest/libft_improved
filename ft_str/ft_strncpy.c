@@ -6,12 +6,13 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 16:14:35 by mjacq             #+#    #+#             */
-/*   Updated: 2020/07/01 10:28:01 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/06 20:29:46 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strncpy(char *dst, const char *src, size_t n)
 {

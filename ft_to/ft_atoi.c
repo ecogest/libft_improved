@@ -6,11 +6,12 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 15:43:48 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/29 19:35:45 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/06 20:30:28 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits.h>
+#include "libft.h"
 
 static int	atoi_isspace(char c)
 {

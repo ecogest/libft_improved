@@ -6,11 +6,12 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 16:44:46 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/07 19:43:58 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/06 20:30:02 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 /*
 ** Search haystack for a needle. Return matching haystack pointer.

@@ -6,9 +6,11 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 17:58:21 by mjacq             #+#    #+#             */
-/*   Updated: 2020/07/01 09:41:44 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/06 20:29:07 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
 ** Lexicographical comparison between s1 and s2. If the 2
