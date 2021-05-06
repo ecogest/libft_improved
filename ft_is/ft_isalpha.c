@@ -6,9 +6,11 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/02 17:32:16 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/07 10:06:47 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/06 19:25:54 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
 ** True if ascii letter (uppercase or lowercase)
