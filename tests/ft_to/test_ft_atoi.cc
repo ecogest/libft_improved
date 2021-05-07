@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 10:56:25 by mjacq             #+#    #+#             */
-/*   Updated: 2021/05/07 15:00:33 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/07 16:58:59 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ struct AtoiTest: public ::testing::TestWithParam<const char *> {
 
 TEST_P(AtoiTest, tests) {
 	EXPECT_EQ(ft_atoi(input), atoi(input));
-	printf("input: %s ; output: %d ", input, ft_atoi(input));
+	// printf("input: %s ; output: %d ", input, ft_atoi(input));
 }
 
 /* ============================== Pure numbers ============================== */
 
 INSTANTIATE_TEST_SUITE_P(AtoiTestSuite, AtoiTest, testing::Values(
-			"0", "1", "2", "-1", "-2", "42", "43", "-42", "-43" // Basic
+			"0", "1", "2", "-1", "-2", "42", "43", "-42", "-43", // Basic
 			"2147483646", "2147483647", "2147483648", "2147483649", // Close to INT_MAX
 			"+2147483646", "+2147483647", "+2147483648", "+2147483649", // Close to INT_MAX
 			"-2147483646", "-2147483647", "-2147483648", "-2147483649", // Close to INT_MIN
