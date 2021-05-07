@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 09:14:47 by mjacq             #+#    #+#             */
-/*   Updated: 2021/05/06 19:56:38 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/07 10:43:53 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,3 +119,19 @@ INSTANTIATE_TEST_SUITE_P(AlnumSuite, IntIsAlnumTest, ::testing::Values(
 			// True:
 			std::make_tuple(65, true)// 'A'
 			));
+
+/*
+** ============================== Range Tests =============================== **
+*/
+
+struct	IsAlnumRangeTest: public ::testing::TestWithParam<int> {
+	int	input = GetParam();
+};
+
+TEST_P(IsAlnumRangeTest, test) {
+	EXPECT_EQ(ft_isalnum(input), isalnum(input));
+}
+
+INSTANTIATE_TEST_SUITE_P(IsAlnumRangeSuite, IsAlnumRangeTest, ::testing::Range(-10, 442));
+
+INSTANTIATE_TEST_SUITE_P(IsAlnumRangeSuite2, IsAlnumRangeTest, ::testing::Values(INT_MIN, INT_MIN + 1, INT_MIN - 1, INT_MAX, INT_MAX - 1, INT_MAX + 1));

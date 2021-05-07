@@ -10,8 +10,8 @@ set (TEST_SRCS
   ft_is/test_ft_isdigit.cc
   ft_is/test_ft_isascii.cc
   ft_is/test_ft_isalpha.cc
-  ft_is/test_ft_strcmp.cc
   ft_is/test_ft_isalnum.cc
+  test_ft_strcmp.cc
   )
 
 add_executable (${TESTER_NAME} ${TEST_SRCS})
