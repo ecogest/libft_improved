@@ -6,6 +6,7 @@ set (TESTER_NAME UnitTests)
 
 set (TEST_SRCS
 # ========================== ADD TEST SOURCES BELOW ========================== #
+  ft_to/test_ft_itoa_base.cc
   ft_to/test_ft_itoa.cc
   ft_to/test_ft_atoi.cc
   ft_is/test_ft_isprint.cc
