@@ -7,17 +7,17 @@ set (TESTER_NAME UnitTests)
 set (TEST_SRCS
 # ========================== ADD TEST SOURCES BELOW ========================== #
   ft_to/ft_wctomb_test.cc
-  ft_to/test_ft_toupper.cc
-  ft_to/test_ft_tolower.cc
-  ft_to/test_ft_itoa_base.cc
-  ft_to/test_ft_itoa.cc
-  ft_to/test_ft_atoi.cc
-  ft_is/test_ft_isprint.cc
-  ft_is/test_ft_isdigit.cc
-  ft_is/test_ft_isascii.cc
-  ft_is/test_ft_isalpha.cc
-  ft_is/test_ft_isalnum.cc
-  test_ft_strcmp.cc
+  ft_to/ft_toupper_test.cc
+  ft_to/ft_tolower_test.cc
+  ft_to/ft_itoa_base_test.cc
+  ft_to/ft_itoa_test.cc
+  ft_to/ft_atoi_test.cc
+  ft_is/ft_isprint_test.cc
+  ft_is/ft_isdigit_test.cc
+  ft_is/ft_isascii_test.cc
+  ft_is/ft_isalpha_test.cc
+  ft_is/ft_isalnum_test.cc
+  ft_strcmp_test.cc
   )
 
 add_executable (${TESTER_NAME} ${TEST_SRCS})
