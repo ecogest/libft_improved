@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 16:59:57 by mjacq             #+#    #+#             */
-/*   Updated: 2021/05/07 17:41:33 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/08 07:57:09 by mrgittes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ extern "C" {
 #include "libft.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <limits.h>
 }
 
 struct ItoaBase10Test: public ::testing::TestWithParam<const char *> {

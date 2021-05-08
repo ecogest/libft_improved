@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 09:14:47 by mjacq             #+#    #+#             */
-/*   Updated: 2021/05/07 10:43:53 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/08 08:00:18 by mrgittes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 extern "C" {
 #include "libft.h"
+#include <limits.h>
 }
 
 #include <vector>
