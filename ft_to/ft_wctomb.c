@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/02 15:46:52 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/29 20:35:33 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/08 19:39:27 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ static int	ft_wctomb_count_bytes(wchar_t wc)
 
 /*
 ** Wide char to multibyte. s memory must be already allocated.
+** Does not automatically adds a '\0' at the end of the string.
 **
 ** Ex char s[4]; ft_wctomb(s, L'🌺');
 */
