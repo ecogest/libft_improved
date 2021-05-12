@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 13:04:51 by mjacq             #+#    #+#             */
-/*   Updated: 2020/12/03 13:06:10 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/12 12:37:50 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,27 @@
 # define GET_NEXT_LINE_PRIV_H
 
 # include "get_next_line.h"
+# include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
+typedef enum e_gnl_status {
+	e_gnl_stat_continue,
+	e_gnl_stat_stop
+}	t_gnl_status;
 
-# define BUFFER_SIZE 10
+typedef struct s_gnl {
+	int		fd;
+	char	**line_ptr;
+	char	*buf;
+	t_list	*parts;
+	int		error_occured;
+	int		eol_reached;
+	int		eof_reached;
+	int		newline_reached;
+}	t_gnl;
 
-# define ERROR		-1
-# define COMPLETE	1
-# define ONGOING	2
-# define END		0
-
-int				ft_char_to_copy(char buf[]);
-int				ft_alloc_line(char **line, int ctc);
-void			ft_concat_line_buffer(char *line, char buf[], int ctc);
-int				ft_buffer_shift(char buf[], unsigned int shift);
-unsigned int	ft_strlen2(char *str);
+void	gnl_run(t_gnl *gnl);
+void	gnl_read(t_gnl *gnl);
+void	gnl_buf_to_tok(t_gnl *gnl);
+void	gnl_join_tokens(t_gnl *gnl);
 
 #endif
