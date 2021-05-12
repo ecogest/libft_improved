@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 20:02:43 by mjacq             #+#    #+#             */
-/*   Updated: 2021/05/12 11:24:38 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/12 13:39:54 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,16 +120,19 @@ TEST_F(GnlTest, carriageOnly) {
 ** ============================== Error Tests =============================== **
 */
 
+// Errors should return (-1) and NULL string
+
 TEST(GnlTestError, BadFd) {
 	char	*s = NULL;
 	EXPECT_EQ(get_next_line(-1, &s), -1);
+	EXPECT_EQ(s, (char *)NULL);
 }
 
 TEST(GnlTestError, BadFd2) {
 	char	*s = NULL;
 	close(42);
 	EXPECT_EQ(get_next_line(42, &s), -1);
-	free(s); // TODO: no need to free on error
+	EXPECT_EQ(s, (char *)NULL);
 }
 
 TEST(GnlTestError, BadPtr) {
@@ -185,11 +188,11 @@ INSTANTIATE_TEST_SUITE_P(GnlSizeTestSingleLineSuite, GnlSizeTestSingleLine, ::te
 			1,
 			2,
 			3,
-			BUFFER_SIZE - (BUFFER_SIZE > 2 ? 2 : 0),
-			BUFFER_SIZE - (BUFFER_SIZE > 1 ? 1 : 1),
-			BUFFER_SIZE,
-			BUFFER_SIZE + 1,
-			BUFFER_SIZE + 2,
+			GNL_BUFFER_SIZE - (GNL_BUFFER_SIZE > 2 ? 2 : 0),
+			GNL_BUFFER_SIZE - (GNL_BUFFER_SIZE > 1 ? 1 : 1),
+			GNL_BUFFER_SIZE,
+			GNL_BUFFER_SIZE + 1,
+			GNL_BUFFER_SIZE + 2,
 			42,
 			442,
 			4442,
