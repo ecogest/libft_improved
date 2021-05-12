@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 20:02:43 by mjacq             #+#    #+#             */
-/*   Updated: 2021/05/08 22:55:05 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/12 11:24:38 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,9 @@ TEST_F(GnlTest, twoLines) {
 	EXPECT_EQ(1, ret);
 	gnl();
 	EXPECT_STREQ("world", read_line);
+	EXPECT_EQ(0, ret);
+	gnl();
+	EXPECT_STREQ("", read_line);
 	EXPECT_EQ(0, ret);
 }
 
