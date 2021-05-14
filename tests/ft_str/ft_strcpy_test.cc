@@ -48,8 +48,8 @@ TEST(FtStrcpyTest, NullCases) {
 	char	dest[10];
 	char	c;
 	c = *dest;
-	EXPECT_EQ(strcpy(dest, NULL), (char *)NULL);
+	EXPECT_EQ(ft_strcpy(dest, NULL), (char *)NULL);
 	EXPECT_EQ(*dest, c);
-	EXPECT_EQ(strcpy(NULL, "hello"), (char *)NULL);
-	EXPECT_EQ(strcpy(NULL, NULL), (char *)NULL);
+	EXPECT_EQ(ft_strcpy(NULL, "hello"), (char *)NULL);
+	EXPECT_EQ(ft_strcpy(NULL, NULL), (char *)NULL);
 }
