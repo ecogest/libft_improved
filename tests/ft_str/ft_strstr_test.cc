@@ -42,12 +42,18 @@ INSTANTIATE_TEST_SUITE_P(FtStrstrTestParameters, FtStrstrParamTest, ::testing::V
 			P("hello world", "l"), // 1 matching char (3 places)
 			P("hello world", "orl"), // 3 matching chars
 			P("yoloyolo", "lo"), // 2 matching chars (2 places)
+			P("yoloyolo", "yo"), // 2 matching chars on start (2 places)
+			P("hello w💀orld", "💀"),
+			P("hello w💀orld", "w💀"),
+			P("hello w💀orld", "💀o"),
 			/* No Match */
 			P("hello world", "xd"), // no match
+			P("hello world", "ldh"), // no match
 			P("hello world", "od"), // no match with existing string characters
 			P("hello world", "eh"), // idem
 			P("hello world", "hello wd"), // idem
 			P("hello world", " hello w"),
+			P("hello w😀orld", "hello w😀"),
 			/* Empty values */
 			P("hello world", ""),
 			P("", "yo"),
