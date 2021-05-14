@@ -6,21 +6,29 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 16:26:08 by mjacq             #+#    #+#             */
-/*   Updated: 2021/05/06 20:28:47 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/14 19:42:07 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+/*
+** Concatenate a string src into already allocated space dst
+**
+** Return NULL and leaves dst untouched if !src or !dst (unlike system strcpy)
+*/
+
+char	*ft_strcat(char *dst, const char *src)
 {
 	int	i;
 
+	if (!dst || !src)
+		return (NULL);
 	i = 0;
-	while (s1[i])
+	while (dst[i])
 		i++;
-	while (*s2)
-		s1[i++] = *s2++;
-	s1[i] = '\0';
-	return (s1);
+	while (*src)
+		dst[i++] = *src++;
+	dst[i] = '\0';
+	return (dst);
 }
