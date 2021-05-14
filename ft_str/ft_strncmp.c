@@ -6,11 +6,20 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 15:31:13 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/29 20:08:23 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/14 17:04:02 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Returns 0 if exact match, else (unsigned char)s1[i] - (unsigned char)s2[i]
+**
+** if n equals zero, return 0 in any case
+**
+** Unprotected: segfault if one string is NULL
+** (protection would give misleading results)
+*/
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

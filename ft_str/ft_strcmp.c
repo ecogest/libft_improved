@@ -6,11 +6,18 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 16:50:21 by mjacq             #+#    #+#             */
-/*   Updated: 2021/05/06 20:28:57 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/14 16:42:36 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Returns 0 if exact match, else (unsigned char)s1[i] - (unsigned char)s2[i]
+**
+** Unprotected: segfault if one string is NULL
+** (protection would give misleading results)
+*/
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
