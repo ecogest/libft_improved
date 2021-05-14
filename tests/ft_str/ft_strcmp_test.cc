@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 16:20:51 by mjacq             #+#    #+#             */
-/*   Updated: 2021/05/14 16:37:19 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/14 16:51:07 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,19 +42,20 @@ TEST_P(FtStrcmpParamTest, all) {
 INSTANTIATE_TEST_SUITE_P(FtStrcmpTestParameters, FtStrcmpParamTest, ::testing::Values(
 			/* Match */
 			P("a", "a"),
-			P("hello world", "hello world"), // 2 matching chars
-			P("Hello world", "Hello world"), // 2 matching chars
+			P("hello world", "hello world"), 
+			P("Hello world", "Hello world"), 
 			P("hello w💀orld", "hello w💀orld"),
 			P("hello w💀Orld", "hello w💀Orld"),
-			P("yoloyolo", "yoloyolo"), // 2 matching chars (2 places)
+			P("yoloyolo", "yoloyolo"), 
 			P("💀", "💀"),
 			/* No match */
 			P("a", "A"),
 			P("A", "a"),
-			P("hello world", "hello"), // 2 matching chars
-			P("hello world", "ello world"), // 2 matching chars
-			P("hello world", "lo"), // 2 matching chars
-			P("yoloyolo", "yoloyololo"), // 2 matching chars (2 places)
+			P("hello world", "hello"), 
+			P("hello world", "ello world"), 
+			P("hello world", "hEllo world"), 
+			P("hello world", "lo"), 
+			P("yoloyolo", "yoloyololo"), 
 			P("hello w💀orld", "💀"),
 			/* Empty values */
 			P("hello world", ""),
