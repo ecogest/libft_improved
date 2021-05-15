@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 20:02:43 by mjacq             #+#    #+#             */
-/*   Updated: 2021/05/15 12:28:53 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/15 18:14:44 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ extern "C" {
 #include "../gnl/get_next_line_priv.h"
 #include <unistd.h>
 }
+
+/*
+** BETTER TESTS AT THE VERY BOTTOM
+*/
 
 /*
 ** ================================ Fixture ================================= **
@@ -196,4 +200,63 @@ INSTANTIATE_TEST_SUITE_P(GnlSizeTestSingleLineSuite, GnlSizeTestSingleLine, ::te
 			442,
 			4442,
 			44442
+			));
+
+/*
+** ============================ Gnl Param Tests ============================= **
+*/
+
+
+struct GnlParamTest:
+	public ::testing::TestWithParam<std::tuple<const char *, std::vector<const char *>>>
+{
+	const char	*input;
+	int			fds[2];
+	char		*read_line;
+	int			ret_gnl;
+	std::vector<const char *>	expected_lines;
+	GnlParamTest():
+		input          (std::get<0> (GetParam ())),
+		expected_lines (std::get<1> (GetParam ())),
+		read_line      (nullptr)
+	{
+		pipe(fds);
+		write(fds[1], input, strlen(input));
+		close(fds[1]);
+	}
+	void	gnl() {
+		ret_gnl = get_next_line(fds[0], &read_line);
+	}
+	~GnlParamTest() {
+		close(fds[0]);
+	}
+};
+
+TEST_P(GnlParamTest, multiLineTests) {
+	size_t	i (0);
+
+	while (i < expected_lines.size())
+	{
+		free(read_line);
+		gnl();
+		EXPECT_STREQ(read_line, expected_lines[i]);
+		if (i == expected_lines.size() - 1)
+			EXPECT_EQ(ret_gnl, 0);
+		else
+			EXPECT_EQ(ret_gnl, 1);
+		i++;
+	}
+	free(read_line);
+}
+
+#define P std::make_tuple<const char *, std::vector<const char *>>
+
+INSTANTIATE_TEST_SUITE_P(GnlParamTestSuite, GnlParamTest, testing::Values(
+			P("hello", { "hello" }),
+			P("hello\n", { "hello", "" }),
+			P("hello\nworld", { "hello", "world" }),
+			P("\nhello\nworld", { "", "hello", "world" }),
+			P("\nhello\n\n\n", { "", "hello", "", "", "" }),
+			P("a\nBc\ndeF\nghij12\nxxklxx=é!", { "a", "Bc", "deF", "ghij12", "xxklxx=é!" }),
+			P("💎\nhel🔥lo\n✨❤️‍🔥!\n🌎\nxyz", { "💎", "hel🔥lo", "✨❤️‍🔥!", "🌎", "xyz" })
 			));
