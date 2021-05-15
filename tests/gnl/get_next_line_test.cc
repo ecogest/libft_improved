@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 20:02:43 by mjacq             #+#    #+#             */
-/*   Updated: 2021/05/12 13:39:54 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/15 12:28:53 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 extern "C" {
 #include "get_next_line.h"
 #include "../gnl/get_next_line_priv.h"
+#include <unistd.h>
 }
 
 /*
@@ -26,25 +27,23 @@ struct GnlTest: public ::testing::Test {
 	const char	*input;
 	char		*read_line;
 	int			ret;
-	FILE	*file;
-	int		fd;
+	int		fds[2];
 	GnlTest(): read_line (nullptr) {
-		file = tmpfile();
-		fd = fileno(file);
+		pipe(fds);
 	}
 	void init(const char *input) {
 		this->input = input;
-		write(fd, input, strlen(input));
-		lseek(fd, 0, SEEK_SET);
+		write(fds[1], input, strlen(input));
+		close(fds[1]); // If we don't close it, gnl's read will hang, waiting for EOF
 		gnl();
 	}
 	void gnl() {
 		free(read_line);
-		ret = get_next_line(fd, &read_line);
+		ret = get_next_line(fds[0], &read_line);
 	}
 	~GnlTest() {
 		free(read_line);
-		fclose(file);
+		close(fds[0]);
 	}
 };
 
