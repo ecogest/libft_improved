@@ -20,8 +20,12 @@ struct FtStrcpyParamTest: public ::testing::TestWithParam<const char *> {
 	char		*ret_mine;
 	char		*ret_system;
 	FtStrcpyParamTest() {
-		bzero(dest_mine, 20);
-		bzero(dest_system, 20);
+		// bzero(dest_mine, 20);
+		// bzero(dest_system, 20);
+		memset(dest_mine, 'x', 20);
+		memset(dest_system, 'x', 20);
+		dest_mine[19] = '\0';
+		dest_system[19] = '\0';
 		ret_mine = ft_strcpy(dest_mine, src);
 		if (src)
 			ret_system = strcpy(dest_system, src);

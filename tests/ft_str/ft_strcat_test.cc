@@ -21,8 +21,12 @@ struct FtStrcatParamTest: public ::testing::TestWithParam<std::tuple<const char 
 	char		*ret_mine;
 	char		*ret_system;
 	FtStrcatParamTest() {
-		bzero(dest_mine, 20);
-		bzero(dest_system, 20);
+		// bzero(dest_mine, 20);
+		// bzero(dest_system, 20);
+		memset(dest_mine, 'x', 20);
+		memset(dest_system, 'x', 20);
+		dest_mine[19] = '\0';
+		dest_system[19] = '\0';
 		strcpy(dest_mine, dst);
 		strcpy(dest_system, dst);
 		ret_mine = ft_strcat(dest_mine, src);
