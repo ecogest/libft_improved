@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 16:50:21 by mjacq             #+#    #+#             */
-/*   Updated: 2021/05/14 16:42:36 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/18 19:59:17 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
 ** Returns 0 if exact match, else (unsigned char)s1[i] - (unsigned char)s2[i]
 **
-** Unprotected: segfault if one string is NULL
+** UNPROTECTED: segfault if one string is NULL
 ** (protection would give misleading results)
 */
 
