@@ -6,7 +6,7 @@
 #    By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/23 18:35:15 by mjacq             #+#    #+#              #
-#    Updated: 2021/05/12 13:20:14 by mjacq            ###   ########.fr        #
+#    Updated: 2021/05/18 18:22:28 by mjacq            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -114,7 +114,6 @@ $(eval SRC += $(addprefix ft_math/,$(SRC_FT_MATH)))
 
 # gnl
 SRC_GNL := get_next_line.c \
-	get_next_line_priv.h \
 	gnl_buf_to_tok.c \
 	gnl_join_tokens.c \
 	gnl_read.c \
