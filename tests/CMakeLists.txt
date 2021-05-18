@@ -6,6 +6,7 @@ set (TESTER_NAME UnitTests)
 
 set (TEST_SRCS
 # ========================== ADD TEST SOURCES BELOW ========================== #
+  ft_str/ft_strnew_test.cc
   ft_str/ft_strlen_test.cc
   ft_str/ft_strdup_test.cc
   ft_mem/ft_memdel_test.cc
