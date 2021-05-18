@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew_test.cc                                  :+:      :+:    :+:   */
+/*   ft_calloc_test.cc                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/18 19:18:33 by mjacq             #+#    #+#             */
-/*   Updated: 2021/05/18 19:37:36 by mjacq            ###   ########.fr       */
+/*   Created: 2021/05/18 19:34:43 by mjacq             #+#    #+#             */
+/*   Updated: 2021/05/18 19:45:47 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,20 @@ extern "C" {
 ** =========================== Parametrized Tests =========================== **
 */
 
-class FtStrnewParamTest:
-	public ::testing::TestWithParam<int>
+class FtCallocParamTest:
+	public ::testing::TestWithParam<std::tuple<size_t, size_t>>
 {
 public:
 	char	*str;
 	char	*cmp;
-	size_t size = GetParam();
-	FtStrnewParamTest () {
-		str = ft_strnew(size);
-		cmp = (char *)malloc(size + 1);
+	size_t size = std::get<0>(GetParam());
+	size_t count = std::get<1>(GetParam());
+	FtCallocParamTest () {
+		str = (char *)ft_calloc(count, size);
+		cmp = (char *)calloc(count, size);
 		bzero(cmp, size + 1);
 	}
-	virtual ~FtStrnewParamTest () {
+	virtual ~FtCallocParamTest () {
 		free(str);
 		free(cmp);
 	}
@@ -45,11 +46,16 @@ public:
 private:
 };
 
-TEST_P(FtStrnewParamTest, all) {
-	EXPECT_FALSE(memcmp(str, cmp, size + 1));
+TEST_P(FtCallocParamTest, all) {
+	EXPECT_FALSE(memcmp(str, cmp, (count && size ? count * size : 1)));
 }
 
-INSTANTIATE_TEST_SUITE_P(FtStrnewTestParameters, FtStrnewParamTest,
+#define P std::make_tuple<size_t, size_t>
+
+INSTANTIATE_TEST_SUITE_P(FtCallocTestParameters, FtCallocParamTest,
 		::testing::Values(
-			0, 1, 2, 10, 42, 515
+			P(0, 0), P(0, 1), P(0, 2), P(0, 3), P(0, 42),
+			P(1, 0), P(1, 1), P(1, 2), P(1, 3), P(1, 42),
+			P(2, 0), P(2, 1), P(2, 2), P(2, 3), P(2, 42),
+			P(7, 0), P(7, 1), P(7, 2), P(7, 3), P(7, 42)
 	));
