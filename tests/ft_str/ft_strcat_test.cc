@@ -13,7 +13,9 @@ extern "C" {
 ** =========================== Parametrized Tests =========================== **
 */
 
-struct FtStrcatParamTest: public ::testing::TestWithParam<std::tuple<const char *, const char *>> {
+struct FtStrcatParamTest:
+	public ::testing::TestWithParam<std::tuple<const char *, const char *>>
+{
 	const char	*src = std::get<0>(GetParam());
 	const char	*dst = std::get<1>(GetParam());
 	char		dest_mine[20];
@@ -46,8 +48,13 @@ TEST_P(FtStrcatParamTest, all) {
 #define P std::make_tuple<const char *, const char *>
 
 INSTANTIATE_TEST_SUITE_P(FtStrcatTestParameters, FtStrcatParamTest, ::testing::Values(
-			P("", ""), P("", "a"), P("A", ""), P("", "hello"), P("world", ""),
-			P("hello", "world"), P("trololo", "w💀orld")
+			P("", ""),
+			P("", "a"),
+			P("A", ""),
+			P("", "hello"),
+			P("world", ""),
+			P("hello", "world"),
+			P("trololo", "w💀orld")
 			));
 
 /*
