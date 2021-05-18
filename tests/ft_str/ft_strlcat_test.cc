@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat_test.cc                                 :+:      :+:    :+:   */
+/*   ft_strlcat_test.cc                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/18 10:41:06 by mjacq             #+#    #+#             */
-/*   Updated: 2021/05/18 16:00:20 by mjacq            ###   ########.fr       */
+/*   Created: 2021/05/18 15:53:22 by mjacq             #+#    #+#             */
+/*   Updated: 2021/05/18 16:00:17 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,26 +25,26 @@ extern "C" {
 ** =========================== Parametrized Tests =========================== **
 */
 
-class FtStrncatParamTest:
+class FtStrlcatParamTest:
 	public ::testing::TestWithParam<std::tuple<const char *, const char *, size_t>>
 {
 public:
 	char		dest_mine[20];
 	char		dest_system[20];
-	char		*ret_mine;
-	char		*ret_system;
-	FtStrncatParamTest () {
+	size_t		ret_mine;
+	size_t		ret_system;
+	FtStrlcatParamTest () {
 		memset(dest_mine, 'x', 20);
 		memset(dest_system, 'x', 20);
 		strcpy(dest_mine, dst);
 		strcpy(dest_system, dst);
 		dest_mine[19] = '\0';
 		dest_system[19] = '\0';
-		ret_mine = ft_strncat(dest_mine, src, size);
+		ret_mine = ft_strlcat(dest_mine, src, size);
 		if (src)
-			ret_system = strncat(dest_system, src, size);
+			ret_system = strlcat(dest_system, src, size);
 	}
-	virtual ~FtStrncatParamTest () {
+	virtual ~FtStrlcatParamTest () {
 	}
 
 private:
@@ -53,15 +53,14 @@ private:
 	size_t		size = std::get<2>(GetParam());
 };
 
-TEST_P(FtStrncatParamTest, all) {
+TEST_P(FtStrlcatParamTest, all) {
 	EXPECT_FALSE(memcmp(dest_mine, dest_system, 20)); // watch after first '\0'
-	EXPECT_EQ(dest_mine, ret_mine);
-	EXPECT_EQ(dest_system, ret_system);
+	EXPECT_EQ(ret_mine, ret_system);
 }
 
 #define P std::make_tuple<const char *, const char *, size_t>
 
-INSTANTIATE_TEST_SUITE_P(FtStrncatTestParameters, FtStrncatParamTest,
+INSTANTIATE_TEST_SUITE_P(FtStrlcatTestParameters, FtStrlcatParamTest,
 		::testing::Values(
 	P("hello", " wo", 0),
 	P("hello", " wo", 1),
@@ -96,13 +95,13 @@ INSTANTIATE_TEST_SUITE_P(FtStrncatTestParameters, FtStrncatParamTest,
 ** =============================== NULL Cases =============================== **
 */
 
-TEST(FtStrncatTest, NullCases) {
+TEST(FtStrlcatTest, NullCases) {
 	char	dest[10];
 	char	c;
 	*dest = 'X';
 	c = *dest;
-	EXPECT_EQ(ft_strncat(dest, NULL, 42), (char *)NULL);
+	EXPECT_EQ(ft_strlcat(dest, NULL, 42), 0);
 	EXPECT_EQ(*dest, c);
-	EXPECT_EQ(ft_strncat(NULL, "hello", 42), (char *)NULL);
-	EXPECT_EQ(ft_strncat(NULL, NULL, 42), (char *)NULL);
+	EXPECT_EQ(ft_strlcat(NULL, "hello", 42), 0);
+	EXPECT_EQ(ft_strlcat(NULL, NULL, 42), 0);
 }
