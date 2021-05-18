@@ -56,8 +56,8 @@ INSTANTIATE_TEST_SUITE_P(FtStrcatTestParameters, FtStrcatParamTest, ::testing::V
 
 TEST(FtStrcatTest, NullCases) {
 	char	dest[10] = "yo";
-	EXPECT_EQ(ft_strcpy(dest, NULL), (char *)NULL);
+	EXPECT_EQ(ft_strcat(dest, NULL), (char *)NULL);
 	EXPECT_STREQ(dest, "yo");
-	EXPECT_EQ(ft_strcpy(NULL, "hello"), (char *)NULL);
-	EXPECT_EQ(ft_strcpy(NULL, NULL), (char *)NULL);
+	EXPECT_EQ(ft_strcat(NULL, "hello"), (char *)NULL);
+	EXPECT_EQ(ft_strcat(NULL, NULL), (char *)NULL);
 }
