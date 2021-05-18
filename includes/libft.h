@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 18:45:42 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/29 20:24:35 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/18 16:43:04 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ char				*ft_strncat(char *s1, const char *s2, size_t n);
 char				*ft_strstr(const char *haystack, const char *needle);
 int					ft_strcmp(const char *s1, const char *s2);
 void				*ft_memalloc(size_t size);
-void				ft_memdel(void **ap);
+void				ft_memdel(void *ap);
 char				*ft_strnew(size_t size);
 void				ft_strdel(char **as);
 void				ft_strclr(char *s);
