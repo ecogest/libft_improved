@@ -6,19 +6,21 @@
 #    By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/23 18:35:15 by mjacq             #+#    #+#              #
-#    Updated: 2021/05/18 18:22:28 by mjacq            ###   ########.fr        #
+#    Updated: 2021/05/19 11:13:31 by mjacq            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra $(INCLUDES)
+NAME     = libft.a
+CC       = clang
+CFLAGS   = -Wall -Werror -Wextra $(INCLUDES)
 INCLUDES = -Iincludes
+
+#  ================================ Sources =================================  #
+
+# SRC = $(wildcard ft_*.c)
 
 # SRC_FT :=
 # $(eval SRC = $(addprefix libft_original/,$(SRC_FT)))
-
-## SOURCES
 
 # ft_is
 SRC_FT_IS := ft_isalnum.c \
@@ -56,12 +58,16 @@ $(eval SRC += $(addprefix ft_mem/,$(SRC_FT_MEM)))
 # ft_mem
 SRC_FT_PUT := ft_putchar.c \
 	ft_putchar_fd.c \
+	ft_putchar_err.c \
 	ft_putendl.c \
 	ft_putendl_fd.c \
+	ft_putendl_err.c \
 	ft_putnbr.c \
 	ft_putnbr_fd.c \
+	ft_putnbr_err.c \
 	ft_putstr.c \
 	ft_putstr_fd.c \
+	ft_putstr_err.c \
 	ft_putwchar.c \
 	ft_putwchar_fd.c
 $(eval SRC += $(addprefix ft_put/,$(SRC_FT_PUT)))
@@ -96,7 +102,10 @@ SRC_FT_STR := ft_split.c \
 	ft_strstr.c \
 	ft_strsub.c \
 	ft_strtrim.c \
-	ft_substr.c
+	ft_substr.c \
+	ft_strnjoin.c \
+	ft_strappend.c \
+	ft_strnappend.c
 $(eval SRC += $(addprefix ft_str/,$(SRC_FT_STR)))
 
 # ft_to
@@ -130,11 +139,13 @@ $(eval SRC += $(addprefix gnl/,$(SRC_GNL)))
 # 	precision.c
 # $(eval SRC += $(addprefix ft_printf/,$(SRC_FT_PRINTF)))
 
-# SRC = $(wildcard ft_*.c)
+#  ================================ Objects =================================  #
+
 OBJ = $(SRC:.c=.o)
 
-
 # BONUS_OBJ = $(BONUS:.c=.o)
+
+#  ================================= Rules ==================================  #
 
 all: $(NAME)
 

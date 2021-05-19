@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_strappend.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/29 18:11:10 by mjacq             #+#    #+#             */
-/*   Updated: 2021/05/19 11:07:51 by mjacq            ###   ########.fr       */
+/*   Created: 2021/05/19 10:06:03 by mjacq             #+#    #+#             */
+/*   Updated: 2021/05/19 10:16:40 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Put string and '\n' to stdout.
+** Join two strings into the first one
+**
+** If success, return *str, else return (NULL)
 */
 
-void	ft_putendl(const char *s)
+char	*ft_strappend(char**str, const char *suffix)
 {
-	ft_putendl_fd(s, 1);
+	char	*tmp;
+
+	if (!suffix || !str)
+		return (NULL);
+	tmp = ft_strjoin(*str, suffix);
+	if (!tmp)
+		return (NULL);
+	free(*str);
+	*str = tmp;
+	return (*str);
 }

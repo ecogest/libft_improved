@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_strnappend.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/29 18:11:10 by mjacq             #+#    #+#             */
-/*   Updated: 2021/05/19 11:07:51 by mjacq            ###   ########.fr       */
+/*   Created: 2021/05/19 10:07:49 by mjacq             #+#    #+#             */
+/*   Updated: 2021/05/19 10:16:25 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Put string and '\n' to stdout.
+** Update one string by appending n chars from a second one
+**
+** If success, return *str, else return (NULL)
 */
 
-void	ft_putendl(const char *s)
+char	*ft_strnappend(char **str, const char *part2, size_t n)
 {
-	ft_putendl_fd(s, 1);
+	char	*tmp;
+
+	if (!str | !part2 | !n)
+		return (NULL);
+	tmp = ft_strnjoin(*str, part2, n);
+	if (!tmp)
+		return (NULL);
+	free(*str);
+	*str = tmp;
+	return (*str);
 }
