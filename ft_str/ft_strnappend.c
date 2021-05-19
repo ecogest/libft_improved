@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:07:49 by mjacq             #+#    #+#             */
-/*   Updated: 2021/05/19 10:16:25 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/19 12:44:41 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ char	*ft_strnappend(char **str, const char *part2, size_t n)
 {
 	char	*tmp;
 
-	if (!str | !part2 | !n)
+	if (!str | !part2)
 		return (NULL);
+	if (!n)
+		return (*str);
 	tmp = ft_strnjoin(*str, part2, n);
 	if (!tmp)
 		return (NULL);
