@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 18:03:02 by mjacq             #+#    #+#             */
-/*   Updated: 2020/07/02 15:58:20 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/19 13:35:58 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include <stddef.h>
 
 /*
-** Lexicographical comparison between s1 and s2 up to n characters
-** or until a ’\0’ is reached. If the 2 strings are identical,
-** the function returns 1, or 0 otherwise.
+** Lexicographical comparison: 1 if equal, 0 otherwise
+**
+** Return 0 if any string is a NULL ptr
 */
 
 int	ft_strnequ(char const *s1, char const *s2, size_t n)
