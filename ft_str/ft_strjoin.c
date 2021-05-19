@@ -6,11 +6,19 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 18:01:06 by mjacq             #+#    #+#             */
-/*   Updated: 2019/11/09 12:08:56 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/18 20:10:26 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Return a newly allocated string filled with s1 and s2 concatenated.
+**
+** Note:
+** - to free s1 at the same time, see ft_strappend
+** - return NULL if s1 or s2 is NULL
+*/
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
