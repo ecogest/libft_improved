@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 18:11:10 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/07 12:06:36 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/19 10:58:23 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Put string and '\n' to stdout.
 */
 
-void	ft_putendl(char const *s)
+void	ft_putendl(const char *s)
 {
 	ft_putendl_fd((char *)s, 1);
 }

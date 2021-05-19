@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 18:45:42 by mjacq             #+#    #+#             */
-/*   Updated: 2021/05/19 10:33:52 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/19 10:58:41 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,12 +126,12 @@ void				ft_memdel(void *ap);
 */
 
 void				ft_putchar_fd(char c, int fd);
-void				ft_putstr_fd(char *s, int fd);
-void				ft_putendl_fd(char *s, int fd);
-void				ft_putnbr_fd(int n, int fd);
 void				ft_putchar(char c);
-void				ft_putstr(char *s);
-void				ft_putendl(char const *s);
+void				ft_putstr_fd(const char *s, int fd);
+void				ft_putstr(const char *s);
+void				ft_putendl_fd(const char *s, int fd);
+void				ft_putendl(const char *s);
+void				ft_putnbr_fd(int n, int fd);
 void				ft_putnbr(int n);
 void				ft_putwchar_fd(wchar_t chr, int fd);
 void				ft_putwchar(wchar_t chr);
