@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_err.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/29 18:11:10 by mjacq             #+#    #+#             */
-/*   Updated: 2021/05/19 11:07:51 by mjacq            ###   ########.fr       */
+/*   Created: 2021/05/19 11:09:04 by mjacq             #+#    #+#             */
+/*   Updated: 2021/05/19 11:09:29 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Put string and '\n' to stdout.
+** Put an integer to stderr.
 */
 
-void	ft_putendl(const char *s)
+void	ft_putnbr_err(int n)
 {
-	ft_putendl_fd(s, 1);
+	ft_putnbr_fd(n, 2);
 }

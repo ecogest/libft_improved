@@ -6,7 +6,7 @@
 #    By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/23 18:35:15 by mjacq             #+#    #+#              #
-#    Updated: 2021/05/19 10:40:16 by mjacq            ###   ########.fr        #
+#    Updated: 2021/05/19 11:13:31 by mjacq            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,12 +58,16 @@ $(eval SRC += $(addprefix ft_mem/,$(SRC_FT_MEM)))
 # ft_mem
 SRC_FT_PUT := ft_putchar.c \
 	ft_putchar_fd.c \
+	ft_putchar_err.c \
 	ft_putendl.c \
 	ft_putendl_fd.c \
+	ft_putendl_err.c \
 	ft_putnbr.c \
 	ft_putnbr_fd.c \
+	ft_putnbr_err.c \
 	ft_putstr.c \
 	ft_putstr_fd.c \
+	ft_putstr_err.c \
 	ft_putwchar.c \
 	ft_putwchar_fd.c
 $(eval SRC += $(addprefix ft_put/,$(SRC_FT_PUT)))

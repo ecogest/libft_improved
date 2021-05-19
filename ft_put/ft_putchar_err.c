@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_err.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/29 18:11:10 by mjacq             #+#    #+#             */
-/*   Updated: 2021/05/19 11:07:51 by mjacq            ###   ########.fr       */
+/*   Created: 2021/05/19 11:02:58 by mjacq             #+#    #+#             */
+/*   Updated: 2021/05/19 11:03:51 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
 /*
-** Put string and '\n' to stdout.
+** Put one char to stderr.
 */
 
-void	ft_putendl(const char *s)
+void	ft_putchar_err(char c)
 {
-	ft_putendl_fd(s, 1);
+	write(2, &c, 1);
 }
