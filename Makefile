@@ -6,19 +6,21 @@
 #    By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/23 18:35:15 by mjacq             #+#    #+#              #
-#    Updated: 2021/05/18 18:22:28 by mjacq            ###   ########.fr        #
+#    Updated: 2021/05/19 10:40:16 by mjacq            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra $(INCLUDES)
+NAME     = libft.a
+CC       = clang
+CFLAGS   = -Wall -Werror -Wextra $(INCLUDES)
 INCLUDES = -Iincludes
+
+#  ================================ Sources =================================  #
+
+# SRC = $(wildcard ft_*.c)
 
 # SRC_FT :=
 # $(eval SRC = $(addprefix libft_original/,$(SRC_FT)))
-
-## SOURCES
 
 # ft_is
 SRC_FT_IS := ft_isalnum.c \
@@ -96,7 +98,10 @@ SRC_FT_STR := ft_split.c \
 	ft_strstr.c \
 	ft_strsub.c \
 	ft_strtrim.c \
-	ft_substr.c
+	ft_substr.c \
+	ft_strnjoin.c \
+	ft_strappend.c \
+	ft_strnappend.c
 $(eval SRC += $(addprefix ft_str/,$(SRC_FT_STR)))
 
 # ft_to
@@ -130,11 +135,13 @@ $(eval SRC += $(addprefix gnl/,$(SRC_GNL)))
 # 	precision.c
 # $(eval SRC += $(addprefix ft_printf/,$(SRC_FT_PRINTF)))
 
-# SRC = $(wildcard ft_*.c)
+#  ================================ Objects =================================  #
+
 OBJ = $(SRC:.c=.o)
 
-
 # BONUS_OBJ = $(BONUS:.c=.o)
+
+#  ================================= Rules ==================================  #
 
 all: $(NAME)
 
