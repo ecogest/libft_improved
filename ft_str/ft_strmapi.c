@@ -6,11 +6,17 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/02 14:38:25 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/29 20:09:49 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/20 10:56:22 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Copy str and apply to each char a function `char f(uint index, char c)`
+**
+** NOT TESTED
+*/
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

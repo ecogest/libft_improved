@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 17:26:53 by mjacq             #+#    #+#             */
-/*   Updated: 2021/04/29 20:06:30 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/05/20 10:55:27 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 #include "libft.h"
 
 /*
-** Applies the function f to each character of the string given
-** as argument to create a “fresh” new string (with malloc(3))
-** resulting from the successive applications of f.
+** Copy str and apply to each char a function `char f(char c)`
 */
 
 char	*ft_strmap(char const *s, char (*f)(char))
