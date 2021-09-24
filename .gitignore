@@ -8,6 +8,7 @@ compile_commands.json
 UnitTests
 tags
 .vimspector.json
+.ccls-cache
 
 # Prerequisites
 *.d
