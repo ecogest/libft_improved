@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 10:57:31 by mjacq             #+#    #+#             */
-/*   Updated: 2021/09/24 09:06:51 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/09/24 09:29:35 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@ extern "C" {
 
 #include <climits>
 #include <iostream>
-#include <vector>
 #include <tuple>
 
-char	tolower(char c)
+static char	tolower(char c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c - 'A' + 'a');
 	else
 		return (c);
 }
+
 /*
 ** =========================== Parametrized Tests =========================== **
 */
@@ -59,7 +59,7 @@ TEST_P(FtStrmapParamTest, all) {
 INSTANTIATE_TEST_SUITE_P(FtStrmapTestParameters, FtStrmapParamTest,
 		::testing::Values(
 			P("Hello", tolower, "hello"),
-			P("Hello", tolower, "hello"),
+			P("HEllO", tolower, "hello"),
 			P("hello", tolower, "hello"),
 			P("H", tolower, "h"),
 			P("h", tolower, "h"),
