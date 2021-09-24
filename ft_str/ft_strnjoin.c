@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:09:55 by mjacq             #+#    #+#             */
-/*   Updated: 2021/05/19 10:17:39 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/09/24 09:54:47 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ char	*ft_strnjoin(const char *s1, const char *s2, size_t n)
 
 	if (!s1 || !s2)
 		return (NULL);
-	if (n > (len2 = ft_strlen(s2)))
+	len2 = ft_strlen(s2);
+	if (n > len2)
 		n = len2;
 	dst = malloc(sizeof(*dst) * (ft_strlen(s1) + n + 1));
 	if (dst)
