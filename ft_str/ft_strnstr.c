@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 14:07:31 by mjacq             #+#    #+#             */
-/*   Updated: 2019/11/04 15:02:09 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/09/27 11:56:52 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 
+	if (!haystack || !needle)
+		return (NULL);
 	if (!(*needle))
 		return ((char *)haystack);
 	while (*haystack && len--)
