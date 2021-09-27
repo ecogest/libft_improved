@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 15:18:10 by mjacq             #+#    #+#             */
-/*   Updated: 2019/11/08 15:15:23 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/09/27 14:46:41 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*last;
+	size_t	i;
 
-	last = NULL;
-	if (!(c))
-		return (ft_strchr(s, '\0'));
-	while (*s)
+	if (!s)
+		return (NULL);
+	i = ft_strlen(s);
+	while (1)
 	{
-		if (*s == c)
-			last = (char *)s;
-		s++;
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		if (!i)
+			return (NULL);
+		i--;
 	}
-	return (last);
 }
