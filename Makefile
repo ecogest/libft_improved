@@ -6,7 +6,7 @@
 #    By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/23 18:35:15 by mjacq             #+#    #+#              #
-#    Updated: 2021/05/19 11:13:31 by mjacq            ###   ########.fr        #
+#    Updated: 2021/11/29 11:17:11 by mjacq            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,9 @@ SRC_FT_IS := ft_isalnum.c \
 	ft_isalpha.c \
 	ft_isascii.c \
 	ft_isdigit.c \
-	ft_isprint.c
+	ft_isprint.c \
+	ft_isnumber.c \
+	ft_isint.c
 $(eval SRC += $(addprefix ft_is/,$(SRC_FT_IS)))
 
 # ft_lst

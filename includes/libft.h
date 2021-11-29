@@ -6,7 +6,7 @@
 /*   By: mjacq <mjacq@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 18:45:42 by mjacq             #+#    #+#             */
-/*   Updated: 2021/05/19 11:09:43 by mjacq            ###   ########.fr       */
+/*   Updated: 2021/11/29 11:01:59 by mjacq            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <stdlib.h>
 # include <wchar.h>
 # include <stdint.h>
+# include <limits.h>
+# include <stdbool.h>
 
 # define FT_MASK_1BIT	0x1
 # define FT_MASK_2BIT	0x3
@@ -54,6 +56,8 @@ int					ft_isdigit(int c);
 int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
+int					ft_isnumber(const char *str);
+int					ft_isint(const char *str);
 
 /*
 ** ================================= ft_to ================================== **
